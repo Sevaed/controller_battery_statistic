@@ -1,8 +1,13 @@
+import os
 import subprocess
 import time
 
 log_file = "/home/sevaed/.config/projects/small/controller_battery_statistic/log.txt"
 buffer = ""
+
+if not os.path.exists(log_file):
+    with open(log_file, "w") as file:
+        file.write("")
 
 
 def is_controller_connected() -> bool:
